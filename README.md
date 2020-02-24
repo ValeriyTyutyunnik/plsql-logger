@@ -1,6 +1,4 @@
-# plsql-logger
-
-### Logger
+## PL/SQL Logger
 Simple and effective logger framework for Oracle Database
 
 ### Requirements
@@ -39,11 +37,11 @@ String format up to 10 arguments are supported. Avoid runtime concatenation for 
 
 To disable some or all log levels - set false in logger_conf package and recompile it.
 ```sql
-  info                constant boolean := false;
-  trace               constant boolean := false;
-  warning             constant boolean := false;
-  error               constant boolean := false;
-  fatal               constant boolean := false;
+  info      constant boolean := false;
+  trace     constant boolean := false;
+  warning   constant boolean := false;
+  error     constant boolean := false;
+  fatal     constant boolean := false;
 ```
 Do not use logger_conf package in your code. This will create a HARD link and whenewer you will recompile logger_conf you'll have to recompile linked objects.
 
@@ -91,7 +89,7 @@ Description: fatal
 Some information for the logger_logs columns:
 
 | Columns       | info                                                                                                   |
-| ------------- |:------------------------------------------------------------------------------------------------------:|
+| ------------- |--------------------------------------------------------------------------------------------------------|
 | log_id        | Auto generated id                                                                                      |
 | lvl           | The log level. Possible values: 'I', 'T', 'W', 'E', 'F'                                                |
 | time          | Systimestamp                                                                                           |
